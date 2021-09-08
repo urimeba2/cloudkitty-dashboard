@@ -20,3 +20,4 @@ import horizon
 class Summary(horizon.Panel):
     name = _("Rating Summary")
     slug = "rating_summary"
+    policy_rules = (("identity", "cloud_admin"),)

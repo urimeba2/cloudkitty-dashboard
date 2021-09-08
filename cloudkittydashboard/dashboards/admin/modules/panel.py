@@ -20,3 +20,4 @@ import horizon
 class Modules(horizon.Panel):
     name = _("Rating Modules")
     slug = "rating_modules"
+    policy_rules = (("identity", "cloud_admin"),)

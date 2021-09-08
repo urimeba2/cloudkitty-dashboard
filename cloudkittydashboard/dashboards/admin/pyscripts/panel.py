@@ -20,3 +20,4 @@ import horizon
 class PyScripts(horizon.Panel):
     name = _("PyScripts")
     slug = "pyscripts"
+    policy_rules = (("identity", "cloud_admin"),)

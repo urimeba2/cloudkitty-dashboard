@@ -20,3 +20,4 @@ import horizon
 class Hashmap(horizon.Panel):
     name = _("Hashmap")
     slug = "hashmap"
+    policy_rules = (("identity", "cloud_admin"),)
