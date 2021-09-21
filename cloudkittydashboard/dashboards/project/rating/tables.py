@@ -12,9 +12,11 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 from django.utils.translation import ugettext_lazy as _
-from dashboards.admin.summary.tables import TotalColumn
 from horizon import tables
 
+class TotalColumn(tables.Column):
+    def get_data(self, datum):
+        return '$ {rate} USD'.format(rate=datum.rate)
 
 class SummaryTable(tables.DataTable):
     """This table formats a summary for the given tenant."""
