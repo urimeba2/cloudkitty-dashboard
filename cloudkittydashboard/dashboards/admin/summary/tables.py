@@ -23,11 +23,9 @@ def get_details_link(datum):
         url = "horizon:admin:rating_summary:project_details"
         return reverse(url, kwargs={'project_id': datum.tenant_id})
 
-
-
 class TotalColumn(tables.Column):
-    def render(self, record):
-        return '${} USD'.format(record.total)
+    def get_data(self, datum):
+        return '$ {rate} USD'.format(rate=datum.rate)
 
 class SummaryTable(tables.DataTable):
     project_id = tables.Column(
