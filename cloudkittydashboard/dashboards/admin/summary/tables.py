@@ -24,12 +24,17 @@ def get_details_link(datum):
         return reverse(url, kwargs={'project_id': datum.tenant_id})
 
 
+
+class TotalColumn(tables.Column):
+    def render(self, record):
+        return '${} USD'.format(record.total)
+
 class SummaryTable(tables.DataTable):
     project_id = tables.Column(
         'tenant_id', verbose_name=_("Project ID"), link=get_details_link)
     project_name = tables.Column(
         'name', verbose_name=_("Project Name"), link=get_details_link)
-    total = tables.Column('rate', verbose_name=_("Project Total"))
+    total = TotalColumn('rate', verbose_name=_("Project Total"))
 
     class Meta(object):
         name = "summary"
