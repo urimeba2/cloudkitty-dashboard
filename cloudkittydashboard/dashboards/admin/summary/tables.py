@@ -41,7 +41,7 @@ class SummaryTable(tables.DataTable):
 
 class TenantSummaryTable(tables.DataTable):
     res_type = tables.Column('res_type', verbose_name=_("Res Type"))
-    rate = tables.Column('rate', verbose_name=_("Rate"))
+    rate = TotalColumn('rate', verbose_name=_("Rate"))
 
     class Meta(object):
         name = "tenant_summary"

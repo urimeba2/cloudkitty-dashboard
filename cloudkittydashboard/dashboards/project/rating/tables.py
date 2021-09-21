@@ -12,7 +12,7 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 from django.utils.translation import ugettext_lazy as _
-
+from dashboards.admin.summary.tables import TotalColumn
 from horizon import tables
 
 
@@ -20,7 +20,7 @@ class SummaryTable(tables.DataTable):
     """This table formats a summary for the given tenant."""
 
     res_type = tables.Column('res_type', verbose_name=_('Metric Type'))
-    rate = tables.Column('rate', verbose_name=_('Rate'))
+    rate = TotalColumn('rate', verbose_name=_('Rate'))
 
     class Meta(object):
         name = "summary"
