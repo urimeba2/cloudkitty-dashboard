@@ -33,7 +33,7 @@ class CreateMethodPayment(tables.LinkAction):
     verbose_name = "Create Method Payment"
     url = "horizon:admin:flavors:create"
     classes = ("ajax-modal",)
-    policy_rules = (("identity", "admin_required"),)
+    # policy_rules = (("identity", "admin_required"),)
     icon = "plus"
 
 class ModifyMethodPayment(tables.LinkAction):
@@ -41,7 +41,7 @@ class ModifyMethodPayment(tables.LinkAction):
     verbose_name = "Modify Method"
     url = "horizon:admin:flavors:update"
     classes = ("ajax-modal",)
-    policy_rules = (("identity", "admin_required"),)
+    # policy_rules = (("identity", "admin_required"),)
     icon = "pencil"
 
     def get_link_url(self, flavor):
