@@ -18,6 +18,6 @@ import horizon
 
 
 class Payment(horizon.Panel):
-    name = _("Payment")
+    name = "Payment"
     slug = "payment_summary"
     policy_rules = (("identity", "admin_required"),)
