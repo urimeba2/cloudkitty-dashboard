@@ -67,11 +67,7 @@ class SummaryTable(tables.DataTable):
     class Meta(object):
         name = "payments"
         verbose_name = "Payments"
-        table_actions = (CreateMethodPayment)
-        row_actions = (
-            ModifyMethodPayment
-
-            # ModifyAccess,
-                    #    UpdateMetadata,
-                    #    DeleteFlavor
-                       )
+        # table_actions = (CreateMethodPayment)
+        # row_actions = (
+        #     ModifyMethodPayment
+        #                )
