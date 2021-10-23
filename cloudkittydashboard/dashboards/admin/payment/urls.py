@@ -14,7 +14,8 @@
 
 from django.conf.urls import url
 
-from cloudkittydashboard.dashboards.admin.summary import views
+# from cloudkittydashboard.dashboards.admin.summary import views
+from cloudkittydashboard.dashboards.admin.payment import views
 
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
