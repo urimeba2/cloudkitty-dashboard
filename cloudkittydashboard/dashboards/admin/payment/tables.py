@@ -60,9 +60,9 @@ class ModifyMethodPayment(tables.LinkAction):
         return not flavor.is_public
 
 class SummaryTable(tables.DataTable):
-    project_id = tables.Column('tenant_id', verbose_name=_("Project ID2"), link=get_details_link)
-    project_name = tables.Column('name', verbose_name=_("Project Name"), link=get_details_link)
-    total = TotalColumn('rate', verbose_name=_("Project Total"))
+    project_id = tables.Column('tenant_id', verbose_name="Project ID2", link=get_details_link)
+    project_name = tables.Column('name', verbose_name="Project Name2", link=get_details_link)
+    total = TotalColumn('rate', verbose_name="Project Total2")
 
     class Meta(object):
         name = "payments"
