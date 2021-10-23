@@ -18,7 +18,7 @@ from horizon import tables
 from openstack_dashboard.api import keystone as api_keystone
 
 from cloudkittydashboard.api import cloudkitty as api
-from cloudkittydashboard.dashboards.admin.summary import tables as sum_tables
+from cloudkittydashboard.dashboards.admin.payment import tables as sum_tables
 
 
 class IndexView(tables.DataTableView):
