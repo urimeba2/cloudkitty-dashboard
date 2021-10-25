@@ -67,10 +67,10 @@ class SummaryTable(tables.DataTable):
     class Meta(object):
         name = "payments"
         verbose_name = "Payments"
-        # table_actions = (CreateMethodPayment)
-        # row_actions = (
-        #     ModifyMethodPayment
-        #                )
+        table_actions = (CreateMethodPayment)
+        row_actions = (
+            ModifyMethodPayment
+                       )
 
 
 class TenantSummaryTable(tables.DataTable):
