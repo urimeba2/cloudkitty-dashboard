@@ -33,14 +33,9 @@ class CreateMethodPayment(tables.LinkAction):
     verbose_name = "Create Method Payment"
     url = "horizon:admin:flavors:create"
     classes = ("ajax-modal",)
-    # policy_rules = (("identity", "admin_required"),)
+    policy_rules = (("identity", "admin_required"),)
     icon = "plus"
 
-    # def get_link_url(self, flavor):
-    #     step = 'update_flavor_access'
-    #     base_url = reverse(self.url, args=[flavor.id])
-    #     param = urlencode({"step": step})
-    #     return "?".join([base_url, param])
 
 class ModifyMethodPayment(tables.LinkAction):
     name = "methods"
@@ -56,8 +51,8 @@ class ModifyMethodPayment(tables.LinkAction):
         param = urlencode({"step": step})
         return "?".join([base_url, param])
 
-    def allowed(self, request, flavor=None):
-        return not flavor.is_public
+    # def allowed(self, request, flavor=None):
+    #     return not flavor.is_public
 
 class SummaryTable(tables.DataTable):
     project_id = tables.Column('tenant_id', verbose_name="Project ID2", link=get_details_link)
@@ -68,9 +63,7 @@ class SummaryTable(tables.DataTable):
         name = "payments"
         verbose_name = "Payments"
         table_actions = (CreateMethodPayment,)
-        row_actions = (
-            ModifyMethodPayment,
-                       )
+        row_actions = (ModifyMethodPayment,)
 
 
 class TenantSummaryTable(tables.DataTable):
