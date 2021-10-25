@@ -36,11 +36,11 @@ class CreateMethodPayment(tables.LinkAction):
     # policy_rules = (("identity", "admin_required"),)
     icon = "plus"
 
-    def get_link_url(self, flavor):
-        step = 'update_flavor_access'
-        base_url = reverse(self.url, args=[flavor.id])
-        param = urlencode({"step": step})
-        return "?".join([base_url, param])
+    # def get_link_url(self, flavor):
+    #     step = 'update_flavor_access'
+    #     base_url = reverse(self.url, args=[flavor.id])
+    #     param = urlencode({"step": step})
+    #     return "?".join([base_url, param])
 
 class ModifyMethodPayment(tables.LinkAction):
     name = "methods"
@@ -67,9 +67,9 @@ class SummaryTable(tables.DataTable):
     class Meta(object):
         name = "payments"
         verbose_name = "Payments"
-        table_actions = (CreateMethodPayment)
+        table_actions = (CreateMethodPayment,)
         row_actions = (
-            ModifyMethodPayment
+            ModifyMethodPayment,
                        )
 
 
